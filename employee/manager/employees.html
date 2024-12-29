@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employees</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/styles/global.css" />
+    <link rel="stylesheet" href="../public/styles/sidebar.css" />
+    <link rel="stylesheet" href="../public/styles/avatar.css" />
+    <link rel="stylesheet" href="../public/styles/custom-bootstrap.css" />
+    <link rel="stylesheet" href="../public/styles/employees.css" />
+    <style>
+      body {
+        display: flex;
+      }
+
+      a {
+        text-decoration: none;
+        color: initial;
+      }
+
+      main {
+        width: 100%;
+        padding: 1em;
+      }
+
+      main > div:nth-child(2) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+
+  <body class="">
+    <aside>
+      <div class=" d-flex justify-content-center">
+        <img class="avatar shadow-medium "
+          src="https://imgs.search.brave.com/7KozPEvd_s3I58vnB1Vus7vRtaio7U7IE4awOuPFc4M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzM5Lzgy/LzEyLzM5ODIxMjMx/ZWZjYmZmMWZmZTRj/ZjAwMGU4YzBiYmI2/LmpwZw"
+          width="100" alt="">
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
+          data-bs-toggle="dropdown">
+          <div>
+            <div class="fw-bold">John Doe</div>
+            <div class="small text-muted">john.doe@company.com</div>
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <ul class="dropdown-menu w-100 ">
+          <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+          <li><a class="dropdown-item" href="#"><i class="fas fa-gear me-2"></i>Settings</a></li>
+          <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-right-from-bracket me-2"></i>Log out</a></li>
+        </ul>
+      </div>
+      <a class="" href="./dashboard.html">
+        <i class="fa-solid fa-house"></i>
+        <span href="">Dashboard</span>
+      </a>
+      <a class="" hidden>
+        <i class="fa-solid fa-briefcase"></i>
+        <span href="">Roles</span>
+      </a>
+      <a class="active" href="./employees.html">
+        <i class="fa-solid fa-users"></i>
+        <span href="">Employees</span>
+      </a>
+      <a href="./leave-managment.html">
+        <i class="fa-solid fa-gear"></i>
+        <span href="">Manage Leaves</span>
+      </a>
+    </aside>
+
+    <main class="">
+      <!-- Stats Overview -->
+      <div class="row mt-4 mb-4">
+          <div class="col-md-3">
+              <div class="card stat-card h-100" style="border-left-color: #0d6efd;">
+                  <div class="card-body">
+                      <h6 class="text-muted">Total Employees</h6>
+                      <h2 class="mb-2">248</h2>
+                      <p class="small text-success mb-0">
+                          <i class="fas fa-arrow-up"></i> 12% from last month
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="card stat-card h-100" style="border-left-color: #198754;">
+                  <div class="card-body">
+                      <h6 class="text-muted">Active Employees</h6>
+                      <h2 class="mb-2">235</h2>
+                      <span class="badge bg-success">94.7%</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="card stat-card h-100" style="border-left-color: #ffc107;">
+                  <div class="card-body">
+                      <h6 class="text-muted">On Leave</h6>
+                      <h2 class="mb-2">8</h2>
+                      <span class="badge bg-warning text-dark">3.2%</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="card stat-card h-100" style="border-left-color: #dc3545;">
+                  <div class="card-body">
+                      <h6 class="text-muted">Departments</h6>
+                      <h2 class="mb-2">12</h2>
+                      <p class="small text-success mb-0">
+                          <i class="fas fa-plus"></i> 2 new this quarter
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Header with Actions -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2>Employees</h2>
+          <div class="d-flex gap-2">
+              <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      <i class="fa-solid fa-download me-1"></i> Export
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#"><i class="far fa-file-excel me-2"></i>Export to Excel</a></li>
+                      <li><a class="dropdown-item" href="#"><i class="far fa-file-pdf me-2"></i>Export to PDF</a></li>
+                      <li><a class="dropdown-item" href="#"><i class="far fa-file-csv me-2"></i>Export to CSV</a></li>
+                  </ul>
+              </div>
+              <button class="btn btn-heavy" onclick="window.location.href='./add-employee.html'">
+                  <i class="fa-solid fa-plus"></i>
+                  <span>New Employee</span>
+              </button>
+          </div>
+      </div>
+
+      <div class="employees-section p-2">
+          <!-- Enhanced Tabs Navigation -->
+          <ul class="nav nav-tabs mb-4 " id="employeeTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button">
+                      All Employees
+                      <span class="badge bg-secondary ms-2">248</span>
+                  </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="active-tab" data-bs-toggle="tab" data-bs-target="#active" type="button">
+                      Active
+                      <span class="badge bg-success ms-2">235</span>
+                  </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="onleave-tab" data-bs-toggle="tab" data-bs-target="#onleave" type="button">
+                      On Leave
+                      <span class="badge bg-warning ms-2">8</span>
+                  </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="inactive-tab" data-bs-toggle="tab" data-bs-target="#inactive" type="button">
+                      Inactive
+                      <span class="badge bg-danger ms-2">5</span>
+                  </button>
+              </li>
+          </ul>
+
+          <!-- Enhanced Filters Row -->
+          <div class="row mb-4 align-items-center g-3">
+              <div class="col-md-3">
+                  <div class="input-group">
+                      <span class="input-group-text bg-light">
+                          <i class="fas fa-search"></i>
+                      </span>
+                      <input type="text" class="form-control" placeholder="Search employees...">
+                  </div>
+              </div>
+              <div class="col-md-2">
+                  <select class="form-select">
+                      <option selected>All Departments</option>
+                      <option>Engineering</option>
+                      <option>Marketing</option>
+                      <option>Sales</option>
+                      <option>HR</option>
+                      <option>Finance</option>
+                      <option>Operations</option>
+                  </select>
+              </div>
+              <div class="col-md-2">
+                  <select class="form-select">
+                      <option selected>All Positions</option>
+                      <option>Director</option>
+                      <option>Manager</option>
+                      <option>Team Lead</option>
+                      <option>Senior</option>
+                      <option>Mid-Level</option>
+                      <option>Junior</option>
+                  </select>
+              </div>
+              <div class="col-md-2">
+                  <select class="form-select">
+                      <option selected>Employment Type</option>
+                      <option>Full-Time</option>
+                      <option>Part-Time</option>
+                      <option>Contract</option>
+                      <option>Intern</option>
+                  </select>
+              </div>
+              <div class="col-md-3">
+                  <div class="d-flex gap-2">
+                      <select class="form-select">
+                          <option selected>Sort By</option>
+                          <option>Name (A-Z)</option>
+                          <option>Name (Z-A)</option>
+                          <option>Department</option>
+                          <option>Position</option>
+                          <option>Date Joined (Newest)</option>
+                          <option>Date Joined (Oldest)</option>
+                      </select>
+                      <button class="btn btn-light" data-bs-toggle="tooltip" title="Reset Filters">
+                          <i class="fas fa-redo-alt"></i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Enhanced Table Content -->
+          <div class="card">
+              <div class="table-responsive">
+                  <table class="table table-hover align-middle mb-0">
+                      <thead class="table-light">
+                          <tr>
+                              <th>
+                                  <input class="form-check-input" type="checkbox" id="selectAll">
+                              </th>
+                              <th>Employee</th>
+                              <th>ID</th>
+                              <th>Department</th>
+                              <th>Position</th>
+                              <th>Type</th>
+                              <th>Status</th>
+                              <th>Joined Date</th>
+                              <th>Actions</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>
+                                  <input class="form-check-input" type="checkbox">
+                              </td>
+                              <td>
+                                  <div class="d-flex align-items-center">
+                                      <img src="https://imgs.search.brave.com/0SspXugi6MjgAM4vlC1ikUvD7DYs6BcamU8ZVjKZ8O4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQ4/NzQ2NTY2NC9waG90/by9wb3J0cmFpdC1l/bXBsb3llZS1hbmQt/YXNpYW4td29tYW4t/d2l0aC1oYXBwaW5l/c3Mtc2VsZmllLWFu/ZC1jb25maWRlbnQt/ZW50cmVwcmVuZXVy/LXdpdGguanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPW8tRzRF/MjdHTkZUYnhGU0c3/UGJhYW1EUEFQTFBS/c2gyV1dndHNpR2RY/REE9" class="rounded-circle me-3 employee-avatar" alt="Sarah Johnson">
+                                      <div>
+                                          <div class="fw-bold">Sarah Johnson</div>
+                                          <div class="text-muted small">sarah.j@company.com</div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td>EMP001</td>
+                              <td>Engineering</td>
+                              <td>Senior Developer</td>
+                              <td>Full-Time</td>
+                              <td><span class="badge bg-success">Active</span></td>
+                              <td>Jan 15, 2023</td>
+                              <td>
+                                  <div class="dropdown action-dropdown">
+                                      <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                          Actions
+                                      </button>
+                                      <ul class="dropdown-menu">
+                                          <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View Profile</a></li>
+                                          <li><a class="dropdown-item" href="#"><i class="fas fa-edit me-2"></i>Edit</a></li>
+                                          <li><a class="dropdown-item" href="#"><i class="fas fa-user-check me-2"></i>Change Status</a></li>
+                                          <li><hr class="dropdown-divider"></li>
+                                          <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-user-times me-2"></i>Deactivate</a></li>
+                                      </ul>
+                                  </div>
+                              </td>
+                          </tr>
+                          <!-- More employee rows would go here -->
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+
+          <!-- Enhanced Pagination -->
+          <div class="d-flex justify-content-between align-items-center mt-4">
+              <div class="text-muted">
+                  Showing <span class="fw-semibold">1-10</span> of
+                  <span class="fw-semibold">248</span> employees
+              </div>
+              <ul class="pagination mb-0">
+                  <li class="page-item disabled">
+                      <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item disabled"><span class="page-link">...</span></li>
+                  <li class="page-item"><a class="page-link" href="#">25</a></li>
+                  <li class="page-item">
+                      <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </main>
+    <script src="../public/javascripts/avatar.js"></script>
+    <script src="../public/javascripts/employees.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tooltipTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        );
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+      });
+    </script>
+  </body>
+</html>

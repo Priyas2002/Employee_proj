@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Employee</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/styles/custom-bootstrap.css" />
+    <link rel="stylesheet" href="../public/styles/global.css" />
+    <link rel="stylesheet" href="../public/styles/sidebar.css" />
+    <link rel="stylesheet" href="../public/styles/avatar.css" />
+    <link rel="stylesheet" href="../public/styles/add-employee.css" />
+    <style>
+      body {
+        display: flex;
+      }
+      main {
+        width: 100%;
+        padding: 20px;
+      }
+      .image-upload-container {
+        width: 200px;
+        position: relative;
+      }
+      .avatar-preview {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 10px;
+        background-color: #f8f9fa;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px dashed #dee2e6;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .avatar-preview:hover {
+        border-color: #0d6efd;
+        background-color: #e9ecef;
+      }
+      .avatar-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .upload-icon {
+        font-size: 2.5rem;
+        color: #6c757d;
+        margin-bottom: 10px;
+      }
+      .upload-text {
+        color: #6c757d;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .image-upload-container input[type="file"] {
+        display: none;
+      }
+      .image-actions {
+        display: none;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+        padding: 5px 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      .image-actions button {
+        background: none;
+        border: none;
+        width: fit-content;
+        color: #aa3e98;
+        padding: 5px 5px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+      .image-actions button:hover {
+        color: #0d6efd;
+      }
+      .has-image .image-actions {
+        display: block;
+      }
+      .has-image:hover .image-actions {
+        display: block;
+      }
+      .drag-over {
+        border-style: solid;
+        border-color: #0d6efd;
+        background-color: rgba(13, 110, 253, 0.1);
+      }
+      .error-feedback {
+        color: #dc3545;
+        font-size: 0.875em;
+        margin-top: 0.25rem;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <aside>
+      <div class=" d-flex justify-content-center">
+          <img class="avatar shadow-medium "
+              src="https://imgs.search.brave.com/7KozPEvd_s3I58vnB1Vus7vRtaio7U7IE4awOuPFc4M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzM5Lzgy/LzEyLzM5ODIxMjMx/ZWZjYmZmMWZmZTRj/ZjAwMGU4YzBiYmI2/LmpwZw"
+              width="100" alt="">
+      </div>
+      <div class="dropdown">
+          <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
+              data-bs-toggle="dropdown">
+              <div>
+                  <div class="fw-bold">John Doe</div>
+                  <div class="small text-muted">john.doe@company.com</div>
+              </div>
+              <i class="fas fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu w-100 ">
+              <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fas fa-gear me-2"></i>Settings</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+              <li>
+                  <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-right-from-bracket me-2"></i>Log
+                      out</a></li>
+          </ul>
+      </div>
+      <a class="" href="./dashboard.html">
+          <i class="fa-solid fa-house"></i>
+          <span href="">Dashboard</span>
+      </a>
+      <a class="" hidden>
+          <i class="fa-solid fa-briefcase"></i>
+          <span href="">Roles</span>
+      </a>
+      <a class="" href="./employees.html">
+          <i class="fa-solid fa-users"></i>
+          <span href="">Employees</span>
+      </a>
+      <a class="active" href="./leave-managment.html">
+          <i class="fa-solid fa-gear"></i>
+          <span href="">Manage Leaves</span>
+      </a>
+  </aside>
+    <main>
+      <div class="">
+        <div class="card">
+          <div class="card-body">
+            <form id="add-emp-form">
+              <div class="row g-3 mb-3">
+                <div class="col">
+                  <!-- Header with title and avatar -->
+                  <div class="mb-5">
+                    <div class="col">
+                      <h2 class="mb-1">Add New Employee</h2>
+                      <p class="text-muted mb-0">
+                        Enter employee information below
+                      </p>
+                    </div>
+                  </div>
+                  <div class="">
+                    <label for="first_name" class="form-label"
+                      >First Name</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="first_name"
+                      name="first_name"
+                      required
+                    />
+                  </div>
+                  <div class="">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="last_name"
+                      name="last_name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="image-upload-container mx-auto">
+                    <div class="avatar-preview" id="avatar-preview">
+                      <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                      <div class="upload-text">
+                        <span>Drag & drop your image here or</span>
+                        <span class="text-primary">click to browse</span>
+                      </div>
+                      <div class="image-actions">
+                        <button type="button" onclick="removeImage()">
+                          <i class="fas fa-trash"></i>
+                        </button>
+                        <button
+                          type="button"
+                          onclick="document.getElementById('avatar').click()"
+                        >
+                          <i class="fas fa-edit"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <input
+                      type="file"
+                      id="avatar"
+                      name="profile_image"
+                      accept="image/*"
+                      onchange="handleImageSelect(this)"
+                    />
+                    <div class="error-feedback" id="avatar-error"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Personal Information -->
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="phone_no" class="form-label">Phone Number</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone_no"
+                    name="phone_no"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="department" class="form-label">Department</label>
+                  <select
+                    class="form-select"
+                    id="department"
+                    name="department"
+                    required
+                    onchange="updateRoles()"
+                  >
+                    <option value="">Select Department</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Design">Design</option>
+                    <option value="Management">Management</option>
+                    <option value="Operations">Operations</option>
+                    <option value="Support">Support</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="role" class="form-label">Role</label>
+                  <select class="form-select" id="role" name="role" required>
+                    <!-- <option value="">Select Role</option> -->
+                    <option value="EMPLOYEE">Employee</option>
+                    <option value="MANAGER">Manager</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="position" class="form-label">Position</label>
+                  <select class="form-select" id="position" name="position" required>
+                    <option value="">Select Department First</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="joined_date" class="form-label"
+                    >Joined Date</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="joined_date"
+                    name="joined_date"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="status" class="form-label">Status</label>
+                  <select
+                    class="form-select"
+                    id="status"
+                    name="status"
+                    required
+                  >
+                    <option value="ACTIVE">Active</option>
+                    <option value="INACTIVE">Inactive</option>
+                    <option value="ON_LEAVE">On Leave</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Buttons -->
+              <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="button" class="btn btn-light">Cancel</button>
+                <button type="submit" class="btn btn-primary">
+                  Add Employee
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../public/javascripts/add-employee.js"></script>
+    <script src="../public/javascripts/requests.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

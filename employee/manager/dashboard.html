@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../public/styles/custom-bootstrap.css">
+  <link rel="stylesheet" href="../public/styles/global.css" />
+  <link rel="stylesheet" href="../public/styles/sidebar.css" />
+  <link rel="stylesheet" href="../public/styles/avatar.css" />
+  <link rel="stylesheet" href="../public/styles/dashboard.css" />
+  <style>
+    body {
+      display: flex;
+    }
+
+    main {
+      width: 100%;
+      padding: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <div class=" d-flex justify-content-center">
+      <img class="avatar shadow-medium "
+        src="https://imgs.search.brave.com/7KozPEvd_s3I58vnB1Vus7vRtaio7U7IE4awOuPFc4M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzM5Lzgy/LzEyLzM5ODIxMjMx/ZWZjYmZmMWZmZTRj/ZjAwMGU4YzBiYmI2/LmpwZw"
+        width="100" alt="">
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
+        data-bs-toggle="dropdown">
+        <div>
+          <div class="fw-bold">John Doe</div>
+          <div class="small text-muted">john.doe@company.com</div>
+        </div>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <ul class="dropdown-menu w-100 ">
+        <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fas fa-gear me-2"></i>Settings</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-right-from-bracket me-2"></i>Log out</a></li>
+      </ul>
+    </div>
+    <a class="active">
+      <i class="fa-solid fa-house"></i>
+      <span href="">Dashboard</span>
+    </a>
+    <a class="" hidden>
+      <i class="fa-solid fa-briefcase"></i>
+      <span href="">Roles</span>
+    </a>
+    <a class="" href="./employees.html">
+      <i class="fa-solid fa-users"></i>
+      <span href="">Employees</span>
+    </a>
+    <a href="./leave-managment.html">
+      <i class="fa-solid fa-gear"></i>
+      <span href="">Manage Leaves</span>
+    </a>
+  </aside>
+  <main>
+    <header></header>
+    <div class="mt-5">
+      <div class="mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="mb-0">Dashboard</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 d-flex gap-3">
+          <div class="card flex-fill">
+            <div class="card-body">
+              <h5 class="card-title text-nowrap">Active Employees</h5>
+              <p class="card-text display-4">50</p>
+            </div>
+          </div>
+          <div class="card flex-fill">
+            <div class="card-body">
+              <h5 class="card-title text-nowrap">Inactive Employees</h5>
+              <p class="card-text display-4">10</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Quick Actions</h5>
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary text-start" onclick="window.location.href='./add-employee.html'">
+                  <i class="fa-solid fa-plus"></i> New Employee
+                </button>
+                <button class="btn btn-secondary text-start">
+                  <i class="fa-solid fa-file-import"></i> Import Employees
+                </button>
+                <button class="btn btn-info text-start">
+                  <i class="fa-solid fa-file-export"></i> Export Employees
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Recent Activity</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex align-items-center">
+                  <div class="avatar-sm me-2">
+                    <img
+                      src="https://imgs.search.brave.com/9uyZ9drxJg4QnsHshdHf1R-T-DvNq0kIQJ6qOKIF3x4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzQ2/NzA2MjM5LTUxNzQt/NGI4OC1hMTcyLWY3/N2NhZGY3NDA0OC9k/NnVvcTljLWFhZjlm/ZDgyLWU5MjYtNGVh/Yy05MjY3LTc3YzQ3/OTliODc0ZC5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/elEyTnpBMk1qTTVM/VFV4TnpRdE5HSTRP/QzFoTVRjeUxXWTNO/Mk5oWkdZM05EQTBP/Rnd2WkRaMWIzRTVZ/eTFoWVdZNVptUTRN/aTFsT1RJMkxUUmxZ/V010T1RJMk55MDNO/Mk0wTnprNVlqZzNO/R1F1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuYW9uOEZmNXds/enVrZHB5d1dwUFVx/VkI2bVhXTVlJTEc1/bTlqUFRpZmRUaw"
+                      width="30" alt="John Doe" class="avatar-img rounded-circle">
+                  </div>
+                  <div class="flex-grow-1 d-flex justify-content-between align-items-center">
+                    <span class="text-truncate">John Doe was added</span>
+                    <small class="text-muted">5 mins ago</small>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <div class="avatar-sm me-2">
+                    <img
+                      src="https://imgs.search.brave.com/9uyZ9drxJg4QnsHshdHf1R-T-DvNq0kIQJ6qOKIF3x4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzQ2/NzA2MjM5LTUxNzQt/NGI4OC1hMTcyLWY3/N2NhZGY3NDA0OC9k/NnVvcTljLWFhZjlm/ZDgyLWU5MjYtNGVh/Yy05MjY3LTc3YzQ3/OTliODc0ZC5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/elEyTnpBMk1qTTVM/VFV4TnpRdE5HSTRP/QzFoTVRjeUxXWTNO/Mk5oWkdZM05EQTBP/Rnd2WkRaMWIzRTVZ/eTFoWVdZNVptUTRN/aTFsT1RJMkxUUmxZ/V010T1RJMk55MDNO/Mk0wTnprNVlqZzNO/R1F1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuYW9uOEZmNXds/enVrZHB5d1dwUFVx/VkI2bVhXTVlJTEc1/bTlqUFRpZmRUaw"
+                      width="30" alt="Jane Smith" class="avatar-img rounded-circle">
+                  </div>
+                  <div class="flex-grow-1 d-flex justify-content-between align-items-center">
+                    <span class="text-truncate">Jane Smith was updated</span>
+                    <small class="text-muted">15 mins ago</small>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <div class="avatar-sm me-2">
+                    <img
+                      src="https://imgs.search.brave.com/9uyZ9drxJg4QnsHshdHf1R-T-DvNq0kIQJ6qOKIF3x4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzQ2/NzA2MjM5LTUxNzQt/NGI4OC1hMTcyLWY3/N2NhZGY3NDA0OC9k/NnVvcTljLWFhZjlm/ZDgyLWU5MjYtNGVh/Yy05MjY3LTc3YzQ3/OTliODc0ZC5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/elEyTnpBMk1qTTVM/VFV4TnpRdE5HSTRP/QzFoTVRjeUxXWTNO/Mk5oWkdZM05EQTBP/Rnd2WkRaMWIzRTVZ/eTFoWVdZNVptUTRN/aTFsT1RJMkxUUmxZ/V010T1RJMk55MDNO/Mk0wTnprNVlqZzNO/R1F1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuYW9uOEZmNXds/enVrZHB5d1dwUFVx/VkI2bVhXTVlJTEc1/bTlqUFRpZmRUaw"
+                      width="30" alt="Mike Brown" class="avatar-img rounded-circle">
+                  </div>
+                  <div class="flex-grow-1 d-flex justify-content-between align-items-center">
+                    <span class="text-truncate">Mike Brown was deactivated</span>
+                    <small class="text-muted">30 mins ago</small>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <div class="avatar-sm me-2">
+                    <img
+                      src="https://imgs.search.brave.com/9uyZ9drxJg4QnsHshdHf1R-T-DvNq0kIQJ6qOKIF3x4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzQ2/NzA2MjM5LTUxNzQt/NGI4OC1hMTcyLWY3/N2NhZGY3NDA0OC9k/NnVvcTljLWFhZjlm/ZDgyLWU5MjYtNGVh/Yy05MjY3LTc3YzQ3/OTliODc0ZC5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/elEyTnpBMk1qTTVM/VFV4TnpRdE5HSTRP/QzFoTVRjeUxXWTNO/Mk5oWkdZM05EQTBP/Rnd2WkRaMWIzRTVZ/eTFoWVdZNVptUTRN/aTFsT1RJMkxUUmxZ/V010T1RJMk55MDNO/Mk0wTnprNVlqZzNO/R1F1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuYW9uOEZmNXds/enVrZHB5d1dwUFVx/VkI2bVhXTVlJTEc1/bTlqUFRpZmRUaw"
+                      width="30" alt="Sarah Lee" class="avatar-img rounded-circle">
+                  </div>
+                  <div class="flex-grow-1 d-flex justify-content-between align-items-center">
+                    <span class="text-truncate">Sarah Lee was added</span>
+                    <small class="text-muted">1 hour ago</small>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <div class="avatar-sm me-2">
+                    <img
+                      src="https://imgs.search.brave.com/9uyZ9drxJg4QnsHshdHf1R-T-DvNq0kIQJ6qOKIF3x4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzQ2/NzA2MjM5LTUxNzQt/NGI4OC1hMTcyLWY3/N2NhZGY3NDA0OC9k/NnVvcTljLWFhZjlm/ZDgyLWU5MjYtNGVh/Yy05MjY3LTc3YzQ3/OTliODc0ZC5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/elEyTnpBMk1qTTVM/VFV4TnpRdE5HSTRP/QzFoTVRjeUxXWTNO/Mk5oWkdZM05EQTBP/Rnd2WkRaMWIzRTVZ/eTFoWVdZNVptUTRN/aTFsT1RJMkxUUmxZ/V010T1RJMk55MDNO/Mk0wTnprNVlqZzNO/R1F1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuYW9uOEZmNXds/enVrZHB5d1dwUFVx/VkI2bVhXTVlJTEc1/bTlqUFRpZmRUaw"
+                      width="30" alt="David Kim" class="avatar-img rounded-circle">
+                  </div>
+                  <div class="flex-grow-1 d-flex justify-content-between align-items-center">
+                    <span class="text-truncate">David Kim was updated</span>
+                    <small class="text-muted">2 hours ago</small>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <div class="avatar-sm me-2">
+                    <img
+                      src="https://imgs.search.brave.com/9uyZ9drxJg4QnsHshdHf1R-T-DvNq0kIQJ6qOKIF3x4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzQ2/NzA2MjM5LTUxNzQt/NGI4OC1hMTcyLWY3/N2NhZGY3NDA0OC9k/NnVvcTljLWFhZjlm/ZDgyLWU5MjYtNGVh/Yy05MjY3LTc3YzQ3/OTliODc0ZC5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/elEyTnpBMk1qTTVM/VFV4TnpRdE5HSTRP/QzFoTVRjeUxXWTNO/Mk5oWkdZM05EQTBP/Rnd2WkRaMWIzRTVZ/eTFoWVdZNVptUTRN/aTFsT1RJMkxUUmxZ/V010T1RJMk55MDNO/Mk0wTnprNVlqZzNO/R1F1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuYW9uOEZmNXds/enVrZHB5d1dwUFVx/VkI2bVhXTVlJTEc1/bTlqUFRpZmRUaw"
+                      width="30" alt="Emily White" class="avatar-img rounded-circle">
+                  </div>
+                  <div class="flex-grow-1 d-flex justify-content-between align-items-center">
+                    <span class="text-truncate">Emily White was promoted</span>
+                    <small class="text-muted">3 hours ago</small>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  </div>
+
+  <script src="../public/javascripts/avatar.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    });
+  </script>
+</body>
+
+</html>

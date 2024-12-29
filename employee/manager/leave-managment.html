@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Leaves</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../public/styles/global.css" />
+    <link rel="stylesheet" href="../public/styles/sidebar.css" />
+    <link rel="stylesheet" href="../public/styles/avatar.css" />
+    <link rel="stylesheet" href="../public/styles/custom-bootstrap.css" />
+    <link rel="stylesheet" href="../public/styles/employees.css" />
+    <style>
+        body {
+            display: flex;
+        }
+
+        a {
+            text-decoration: none;
+            color: initial;
+        }
+
+        main {
+            width: 100%;
+            padding: 1em;
+        }
+
+        main>div:nth-child(2) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body class="">
+    <aside>
+        <div class=" d-flex justify-content-center">
+            <img class="avatar shadow-medium "
+                src="https://imgs.search.brave.com/7KozPEvd_s3I58vnB1Vus7vRtaio7U7IE4awOuPFc4M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzM5Lzgy/LzEyLzM5ODIxMjMx/ZWZjYmZmMWZmZTRj/ZjAwMGU4YzBiYmI2/LmpwZw"
+                width="100" alt="">
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
+                data-bs-toggle="dropdown">
+                <div>
+                    <div class="fw-bold">John Doe</div>
+                    <div class="small text-muted">john.doe@company.com</div>
+                </div>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="dropdown-menu w-100 ">
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-gear me-2"></i>Settings</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-right-from-bracket me-2"></i>Log
+                        out</a></li>
+            </ul>
+        </div>
+        <a class="" href="./dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            <span href="">Dashboard</span>
+        </a>
+        <a class="" hidden>
+            <i class="fa-solid fa-briefcase"></i>
+            <span href="">Roles</span>
+        </a>
+        <a class="" href="./employees.html">
+            <i class="fa-solid fa-users"></i>
+            <span href="">Employees</span>
+        </a>
+        <a class="active" href="./leave-managment.html">
+            <i class="fa-solid fa-gear"></i>
+            <span href="">Manage Leaves</span>
+        </a>
+    </aside>
+
+    <main class="">
+        <div class="mt-4">
+            <h2 class="mb-4">Leave Management</h2>
+
+            <!-- Summary Cards -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">Pending Requests</h6>
+                            <h2 class="card-title mb-0">12</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">Approved Today</h6>
+                            <h2 class="card-title mb-0">5</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">On Leave Today</h6>
+                            <h2 class="card-title mb-0">8</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">Rejected This Month</h6>
+                            <h2 class="card-title mb-0">3</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters and Search -->
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <div class="d-flex gap-3">
+                        <select class="form-select w-auto">
+                            <option selected>All Departments</option>
+                            <option>IT</option>
+                            <option>HR</option>
+                            <option>Finance</option>
+                        </select>
+                        <select class="form-select w-auto">
+                            <option selected>All Status</option>
+                            <option>Pending</option>
+                            <option>Approved</option>
+                            <option>Rejected</option>
+                        </select>
+                        <select class="form-select w-auto">
+                            <option selected>This Month</option>
+                            <option>Last Month</option>
+                            <option>Last 3 Months</option>
+                            <option>Custom Range</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search employees...">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leave Requests Table -->
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Department</th>
+                                <th>Leave Type</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Duration</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://imgs.search.brave.com/Kh9t6VtRtsWgghfsWvh9q4Qn3mn44SVMPu4r2skfrx4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2JjLzcw/L2VlL2JjNzBlZTM2/NmJmMGM1OTA2YmZk/Y2RiMWVkYTE1ZDRj/LmpwZw"
+                                            width="40" class="rounded-circle me-2" alt="Avatar">
+                                        <div>
+                                            <div class="fw-bold">Sarah Johnson</div>
+                                            <div class="small text-muted">ID: EMP001</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>IT</td>
+                                <td>Annual Leave</td>
+                                <td>Dec 28, 2024</td>
+                                <td>Jan 02, 2025</td>
+                                <td>5 days</td>
+                                <td><span class="badge bg-warning status-badge">Pending</span></td>
+                                <td class="d-flex justify-content-center">
+                                    <div class="dropdown"></div>
+                                    <button class="btn btn-sm " type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="fas fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item text-success" href="#">
+                                                <i class="fas fa-check me-2"></i> Approve
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item text-danger" href="#">
+                                                <i class="fas fa-times me-2"></i> Reject
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fas fa-eye me-2"></i> View Details
+                                            </a>
+                                        </li>
+                                    </ul>
+                </div>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="https://imgs.search.brave.com/Kh9t6VtRtsWgghfsWvh9q4Qn3mn44SVMPu4r2skfrx4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2JjLzcw/L2VlL2JjNzBlZTM2/NmJmMGM1OTA2YmZk/Y2RiMWVkYTE1ZDRj/LmpwZw"
+                                width="40" class="rounded-circle me-2" alt="Avatar">
+                            <div>
+                                <div class="fw-bold">Mike Smith</div>
+                                <div class="small text-muted">ID: EMP002</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>HR</td>
+                    <td>Sick Leave</td>
+                    <td>Dec 27, 2024</td>
+                    <td>Dec 27, 2024</td>
+                    <td>1 day</td>
+                    <td><span class="badge bg-success status-badge">Approved</span></td>
+                    <td class="d-flex justify-content-center">
+                        <div class="dropdown"></div>
+                        <button class="btn btn-sm " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item text-success" href="#">
+                                    <i class="fas fa-check me-2"></i> Approve
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-danger" href="#">
+                                    <i class="fas fa-times me-2"></i> Reject
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-eye me-2"></i> View Details
+                                </a>
+                            </li>
+                        </ul>
+            </div>
+            </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <img src="https://imgs.search.brave.com/Kh9t6VtRtsWgghfsWvh9q4Qn3mn44SVMPu4r2skfrx4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2JjLzcw/L2VlL2JjNzBlZTM2/NmJmMGM1OTA2YmZk/Y2RiMWVkYTE1ZDRj/LmpwZw"
+                            width="40" class="rounded-circle me-2" alt="Avatar">
+                        <div>
+                            <div class="fw-bold">Emily Brown</div>
+                            <div class="small text-muted">ID: EMP003</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Finance</td>
+                <td>Personal Leave</td>
+                <td>Dec 29, 2024</td>
+                <td>Dec 30, 2024</td>
+                <td>2 days</td>
+                <td><span class="badge bg-danger status-badge">Rejected</span></td>
+                <td class="d-flex justify-content-center">
+                    <div class="dropdown"></div>
+                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-ellipsis-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item text-success" href="#">
+                                <i class="fas fa-check me-2"></i> Approve
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#">
+                                <i class="fas fa-times me-2"></i> Reject
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-eye me-2"></i> View Details
+                            </a>
+                        </li>
+                    </ul>
+        </div>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+
+        <!-- Enhanced Pagination -->
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <div class="text-muted">
+                Showing <span class="fw-semibold">1-10</span> of
+                <span class="fw-semibold">248</span> employees
+            </div>
+            <ul class="pagination mb-0">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item disabled"><span class="page-link">...</span></li>
+                <li class="page-item"><a class="page-link" href="#">25</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <script src="../public/javascripts/avatar.js"></script>
+    <script src="../public/javascripts/employees.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tooltipTriggerList = [].slice.call(
+                document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            );
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+</body>
+
+</html>
