@@ -1,0 +1,47 @@
+/* Anchor tags styling */
+a {
+    text-decoration: none;
+    color: inherit; /* Use 'inherit' to match parent color for consistency */
+}
+
+/* Icon styling */
+aside i {
+    width: 20px;
+}
+
+/* Unordered list styling */
+ul {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    margin: 0;
+}
+
+/* Sidebar styling */
+aside {
+    display: flex; /* Simplify from inline-flex unless 'inline' is necessary */
+    flex-direction: column;
+    padding: 2em 1.5em; /* Simplify shorthand if both values are the same */
+    min-height: 100vh; /* Full viewport height */
+    gap: 20px; /* Consistent spacing between elements */
+    border-right: 1px solid rgba(0, 0, 0, 0.5); /* Light divider for separation */
+}
+
+/* Sidebar links styling */
+aside a {
+    display: flex; /* Flex for alignment */
+    align-items: center; /* Vertically center content */
+    justify-content: space-between; /* Distribute space between elements */
+    gap: 15px; /* Consistent spacing */
+    width: max-content; /* Replace fit-content for better support */
+}
+
+/* Sidebar active styling */
+aside a.active {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    text-transform: upp;
+}
+

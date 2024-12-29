@@ -1,0 +1,247 @@
+/* Root Variables */
+:root {
+    --border-color: #e9ecef;
+    --hover-bg: #f8f9fa;
+    --primary-color: #aa3e98;
+    --text-muted: #6c757d;
+    --badge-active-bg: #dcf5e7;
+    --badge-active-color: #0a6c2e;
+    --badge-leave-bg: #fff4d9;
+    --badge-leave-color: #946300;
+    --badge-inactive-bg: #ffe5e5;
+    --badge-inactive-color: #c10000;
+    --transition: all 0.2s ease-in-out;
+}
+
+/* Employees Section Container */
+.employees-section {    
+    background: #fff;
+    border-radius: 0.5rem;
+}
+
+/* Tabs Styling */
+.employees-section .nav-tabs {
+    border-bottom: 1px solid var(--border-color);
+    gap: 1rem;
+    padding: 0 0.5rem;
+}
+
+.employees-section .nav-tabs .nav-link {
+    color: var(--text-muted);
+    border: none;
+    padding: 1rem 0.5rem;
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
+}
+
+.employees-section .nav-tabs .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.employees-section .nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    background: transparent;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.employees-section .nav-tabs .badge {
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0.35em 0.65em;
+    transition: var(--transition);
+}
+
+/* Filters Row */
+.employees-section .form-select {
+    border-color: var(--border-color);
+    padding: 0.6rem 2.25rem 0.6rem 0.75rem;
+    font-size: 0.875rem;
+    transition: var(--transition);
+}
+
+.employees-section .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(170, 62, 152, 0.25);
+}
+
+/* Table Styling */
+.employees-section .card {
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.employees-section .table {
+    margin-bottom: 0;
+}
+
+.employees-section .table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.employees-section .table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.employees-section .table tr:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Checkbox Styling */
+.employees-section .form-check-input {
+    cursor: pointer;
+    border-color: #dee2e6;
+}
+
+.employees-section .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Employee Info */
+.employees-section .rounded-circle {
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Status Badges */
+.employees-section .badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+    border-radius: 0.25rem;
+}
+
+.badge.bg-success {
+    background-color: var(--badge-active-bg) !important;
+    color: var(--badge-active-color);
+}
+
+.badge.bg-warning {
+    background-color: var(--badge-leave-bg) !important;
+    color: var(--badge-leave-color);
+}
+
+.badge.bg-danger {
+    background-color: var(--badge-inactive-bg) !important;
+    color: var(--badge-inactive-color);
+}
+
+/* Action Buttons */
+.employees-section .btn-light {
+    border: 1px solid var(--border-color);
+    padding: 0.375rem 0.75rem;
+    transition: var(--transition);
+}
+
+.employees-section .btn-light:hover {
+    background-color: var(--hover-bg);
+    border-color: #ced4da;
+}
+
+/* Dropdown Menu */
+.employees-section .dropdown-menu {
+    padding: 0.5rem 0;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.375rem;
+}
+
+.employees-section .dropdown-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    transition: var(--transition);
+}
+
+.employees-section .dropdown-item i {
+    width: 1rem;
+    text-align: center;
+}
+
+.employees-section .dropdown-item:hover {
+    background-color: var(--hover-bg);
+    color: var(--primary-color);
+}
+
+.employees-section .dropdown-item.text-danger:hover {
+    background-color: #fff5f5;
+}
+
+/* Pagination */
+.employees-section .pagination {
+    gap: 0.25rem;
+}
+
+.page-link {
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 0.375rem 0.75rem;
+    transition: var(--transition);
+}
+
+.employees-section .page-link:hover {
+    background-color: var(--hover-bg);
+    color: var(--primary-color);
+    border-color: var(--border-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Records Info */
+.employees-section .text-muted {
+    font-size: 0.875rem;
+}
+
+.stat-card {
+    border-left: 4px solid;
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.employee-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.action-dropdown .dropdown-menu {
+    min-width: 200px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .employees-section .nav-tabs {
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .employees-section .nav-tabs .nav-link {
+        white-space: nowrap;
+    }
+
+    .employees-section .table th {
+        font-size: 0.7rem;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .employees-section .table td {
+        padding: 0.75rem 0.5rem;
+    }
+}
+

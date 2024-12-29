@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+/* Global reset and font settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", serif;
+    transition: all 0.3s ease; /* Apply smooth transition globally */
+}
+
+/* Define reusable color variables */
+:root {
+    --primary-color: #aa3e98; /* Main red color */
+    --light-border: rgba(25, 50, 91, 0.2); /* Light border color */
+    --hover-background-light: rgba(0, 0, 0, 0.188); /* Light hover background */
+    --text-light: #ffffff; /* Light text color */
+}
+
+/* Light button styles */
+.btn-light {
+    border: 1px solid var(--light-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-light:hover {
+    background-color: var(--hover-background-light);
+}
+
+/* Heavy button styles */
+.btn-heavy {
+    background-color: var(--primary-color);
+    color: var(--text-light) !important; /* Ensures text stays consistent */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-heavy:hover {
+    background-color: var(--text-light) !important;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color) !important; /* Text color on hover */
+}
+
+.btn-heavy > * {
+    transition: inherit; /* Ensure child elements inherit the transition */
+}
+
+/* Additional Button Utility Styles (Optional) */
+.btn {
+    padding: 0.5em 1em; /* Adjust padding */
+    border-radius: 5px; /* Smooth border radius */
+    font-weight: 600; /* Slightly bold text */
+    cursor: pointer; /* Pointer cursor for better UX */
+    display: inline-block; /* Ensure proper spacing */
+}
+
+.profile-header {
+    border-radius: 10px 10px 10px 10px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
