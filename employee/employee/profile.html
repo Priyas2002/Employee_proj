@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../public/styles/custom-bootstrap.css">
+    <link rel="stylesheet" href="../public/styles/global.css" />
+    <link rel="stylesheet" href="../public/styles/sidebar.css" />
+    <link rel="stylesheet" href="../public/styles/avatar.css" />
+    <link rel="stylesheet" href="../public/styles/dashboard.css" />
+    <style>
+        body {
+            display: flex;
+        }
+
+        main {
+            width: 100%;
+            padding: 1em;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+
+        .stat-card {
+            transition: transform 0.2s;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        .schedule-item {
+            border-left: 3px solid #4e73df;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge-custom {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-light d-flex">
+    <aside>
+        <div class=" d-flex justify-content-center">
+            <img class="avatar shadow-medium "
+                src="https://imgs.search.brave.com/PUs-9qXlTnNWXF5aegQQvjlXb_7ilrK7GtUPFT8PoBc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzI3/YTVlYmViLWI5NDEt/NDBmZi04MWNhLTRi/YzgzOWQ3NWQyNy9k/ZzJwanUyLWM2YmQz/ZWNmLTExNmMtNDA0/Ny05NDNiLTg5Y2I2/ZTE4ZDk4NS5qcGc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekkzWVRWbFltVmlM/V0k1TkRFdE5EQm1a/aTA0TVdOaExUUmlZ/emd6T1dRM05XUXlO/MXd2WkdjeWNHcDFN/aTFqTm1Ka00yVmpa/aTB4TVRaakxUUXdO/RGN0T1RRellpMDRP/V05pTm1VeE9HUTVP/RFV1YW5CbkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuWXUzZy1yb2pV/MXBSWGRlVDJ3WHhr/R2dQem00OVVZcWM2/ejRTSEpfdGgxdw"
+                width="100" alt="">
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
+                data-bs-toggle="dropdown">
+                <div>
+                    <div class="fw-bold">Roronona Zoro</div>
+                    <div class="small text-muted">zoro@roronoa.com</div>
+                </div>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="dropdown-menu w-100 ">
+                <li><a class="dropdown-item" href="./profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-gear me-2"></i>Settings</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-right-from-bracket me-2"></i>Log
+                        out</a></li>
+            </ul>
+        </div>
+        <a class="active">
+            <i class="fa-solid fa-user"></i>
+            <span href="">Personal Details</span>
+        </a>
+        <a class="">
+            <i class="fa-solid fa-house"></i>
+            <span href="">Dashboard</span>
+        </a>
+        <a class="" hidden>
+            <i class="fa-solid fa-briefcase"></i>
+            <span href="">Roles</span>
+        </a>
+        <a class="" href="./employees.html">
+            <i class="fa-solid fa-briefcase"></i>
+            <span href="">Bank Details</span>
+        </a>
+        <a href="./leave-managment.html">
+            <i class="fa-solid fa-gear"></i>
+            <span href="">Manage Leaves</span>
+        </a>
+    </aside>
+    <main class="p-4">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <img src="https://imgs.search.brave.com/PUs-9qXlTnNWXF5aegQQvjlXb_7ilrK7GtUPFT8PoBc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzI3/YTVlYmViLWI5NDEt/NDBmZi04MWNhLTRi/YzgzOWQ3NWQyNy9k/ZzJwanUyLWM2YmQz/ZWNmLTExNmMtNDA0/Ny05NDNiLTg5Y2I2/ZTE4ZDk4NS5qcGc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekkzWVRWbFltVmlM/V0k1TkRFdE5EQm1a/aTA0TVdOaExUUmlZ/emd6T1dRM05XUXlO/MXd2WkdjeWNHcDFN/aTFqTm1Ka00yVmpa/aTB4TVRaakxUUXdO/RGN0T1RRellpMDRP/V05pTm1VeE9HUTVP/RFV1YW5CbkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuWXUzZy1yb2pV/MXBSWGRlVDJ3WHhr/R2dQem00OVVZcWM2/ejRTSEpfdGgxdw"
+                        width="70" alt="Profile" class="rounded-circle ">
+                </div>
+                <div class="col">
+                    <h2 class="mb-1">Roronona Zoro</h2>
+                    <p class="mb-0">Employee ID: EMP001 | Department: Swordsman Division</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="card info-card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="section-title">Basic Information</h5>
+                            <button class="btn btn-sm btn-outline-primary edit-button">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Full Name</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                Roronona Zoro
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Date of Birth</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                November 11, 1999
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Gender</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                Male
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Blood Group</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                O+
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Marital Status</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                Single
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card info-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="section-title">Contact Information</h5>
+                            <button class="btn btn-sm btn-outline-primary edit-button">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Email</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                zoro@roronoa.com
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Phone</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                +1 234 567 8900
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Emergency Contact</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                Monkey D. Luffy<br>
+                                +1 234 567 8901
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card info-card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="section-title">Address Details</h5>
+                            <button class="btn btn-sm btn-outline-primary edit-button">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Current Address</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                123 Grand Line Street<br>
+                                East Blue City, GL 12345
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Permanent Address</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                456 Shimotsuki Village<br>
+                                East Blue Region, GL 67890
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card info-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="section-title mb-4">Professional Details</h5>
+                            <button class="btn btn-sm btn-outline-primary edit-button">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Department</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                Swordsman Division
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Designation</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                Senior Swordsman
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Join Date</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                January 1, 2020
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <strong>Employee Type</strong>
+                            </div>
+                            <div class="col-sm-8">
+                                Full Time
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card info-card" hidden>
+                    <div class="card-body">
+                        <h5 class="section-title mb-4">Documents</h5>
+                        <div class="list-group">
+                            <a href="#"
+                                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-file-pdf me-2 text-danger"></i>
+                                    ID Proof
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-primary me-2">View</button>
+                                    <button class="btn btn-sm btn-success">Update</button>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-file-pdf me-2 text-danger"></i>
+                                    Address Proof
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-primary me-2">View</button>
+                                    <button class="btn btn-sm btn-success">Update</button>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-file-pdf me-2 text-danger"></i>
+                                    Resume
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-primary me-2">View</button>
+                                    <button class="btn btn-sm btn-success">Update</button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="../public/javascripts/avatar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tooltipTriggerList = [].slice.call(
+                document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            );
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+    <!-- <script>
+        // Set current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../public/styles/custom-bootstrap.css">
+    <link rel="stylesheet" href="../public/styles/global.css" />
+    <link rel="stylesheet" href="../public/styles/sidebar.css" />
+    <link rel="stylesheet" href="../public/styles/avatar.css" />
+    <link rel="stylesheet" href="../public/styles/dashboard.css" />
+    <style>
+        body {
+            display: flex;
+        }
+
+        main {
+            width: 100%;
+            padding: 1em;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+            color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+
+        .stat-card {
+            transition: transform 0.2s;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        .schedule-item {
+            border-left: 3px solid #4e73df;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge-custom {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-light d-flex">
+    <aside>
+        <div class=" d-flex justify-content-center">
+            <img class="avatar shadow-medium "
+                src="https://imgs.search.brave.com/PUs-9qXlTnNWXF5aegQQvjlXb_7ilrK7GtUPFT8PoBc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzI3/YTVlYmViLWI5NDEt/NDBmZi04MWNhLTRi/YzgzOWQ3NWQyNy9k/ZzJwanUyLWM2YmQz/ZWNmLTExNmMtNDA0/Ny05NDNiLTg5Y2I2/ZTE4ZDk4NS5qcGc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekkzWVRWbFltVmlM/V0k1TkRFdE5EQm1a/aTA0TVdOaExUUmlZ/emd6T1dRM05XUXlO/MXd2WkdjeWNHcDFN/aTFqTm1Ka00yVmpa/aTB4TVRaakxUUXdO/RGN0T1RRellpMDRP/V05pTm1VeE9HUTVP/RFV1YW5CbkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuWXUzZy1yb2pV/MXBSWGRlVDJ3WHhr/R2dQem00OVVZcWM2/ejRTSEpfdGgxdw"
+                width="100" alt="profile_image">
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
+                data-bs-toggle="dropdown">
+                <div>
+                    <div class="fw-bold">Roronona Zoro</div>
+                    <div class="small text-muted">zoro@roronoa.com</div>
+                </div>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul class="dropdown-menu w-100 ">
+                <li><a class="dropdown-item" href="./profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-gear me-2"></i>Settings</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-right-from-bracket me-2"></i>Log
+                        out</a></li>
+            </ul>
+        </div>
+        <a class="active">
+            <i class="fa-solid fa-house"></i>
+            <span href="">Dashboard</span>
+        </a>
+        <a class="" hidden>
+            <i class="fa-solid fa-briefcase"></i>
+            <span href="">Roles</span>
+        </a>
+        <a class="" href="./bank-details.html">
+            <i class="fa-solid fa-briefcase"></i>
+            <span href="">Bank Details</span>
+        </a>
+        <a href="./leave-managment.html">
+            <i class="fa-solid fa-gear"></i>
+            <span href="">Manage Leaves</span>
+        </a>
+    </aside>
+    <main class="p-4">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <div class="row align-items-center">
+                <!-- <div class="col-auto">
+                    <img src="/api/placeholder/100/100" alt="Profile"
+                        class="rounded-circle border border-3 border-white">
+                </div> -->
+                <div class="col">
+                    <h2 class="mb-1">Welcome Back, Roronona Zoro!</h2>
+                    <p class="mb-1">Employee ID: EMP001 | Department: Swordsman Division</p>
+                </div>
+                <div class="col-auto">
+                    <div class="text-end">
+                        <p class="mb-1">Today's Date: <span id="currentDate"></span></p>
+                        <p class="mb-0">Clock In Time: 9:00 AM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-3">
+                <div class="stat-card card bg-primary text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6 class="card-title">Attendance Rate</h6>
+                                <h3 class="mb-0">98.5%</h3>
+                            </div>
+                            <i class="fas fa-calendar fa-2x opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card card bg-success text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6 class="card-title">Leave Balance</h6>
+                                <h3 class="mb-0">15 Days</h3>
+                            </div>
+                            <i class="fas fa-bed fa-2x opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card card bg-info text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6 class="card-title">Active Projects</h6>
+                                <h3 class="mb-0">4</h3>
+                            </div>
+                            <i class="fas fa-project-diagram fa-2x opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card card bg-warning text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6 class="card-title">Pending Tasks</h6>
+                                <h3 class="mb-0">7</h3>
+                            </div>
+                            <i class="fas fa-tasks fa-2x opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="row g-4">
+            <!-- Quick Access Section -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header bg-white">
+                        <h5 class="card-title mb-0">Quick Access</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="quick-access-card p-3 mb-3">
+                            <h6><i class="fas fa-calendar-plus me-2"></i>Apply Leave</h6>
+                            <small class="text-muted">Request time off or check leave status</small>
+                        </div>
+                        <div class="quick-access-card p-3 mb-3">
+                            <h6><i class="fas fa-file-invoice me-2"></i>Payslip Download</h6>
+                            <small class="text-muted">Access your monthly salary statements</small>
+                        </div>
+                        <div class="quick-access-card p-3 mb-3">
+                            <h6><i class="fas fa-clock me-2"></i>Timesheet</h6>
+                            <small class="text-muted">View and manage your work hours</small>
+                        </div>
+                        <div class="quick-access-card p-3">
+                            <h6><i class="fas fa-tasks me-2"></i>Task Manager</h6>
+                            <small class="text-muted">Track your daily assignments</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Section -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header bg-white">
+                        <h5 class="card-title mb-0">Recent Activities</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="timeline-item">
+                            <h6 class="mb-1">Project Update: Grand Line Exploration</h6>
+                            <small class="text-muted">Today, 10:30 AM</small>
+                            <p class="small mb-0">Completed milestone 2 ahead of schedule</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h6 class="mb-1">Leave Request Approved</h6>
+                            <small class="text-muted">Yesterday, 2:15 PM</small>
+                            <p class="small mb-0">Your leave request for next week has been approved</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h6 class="mb-1">New Task Assignment</h6>
+                            <small class="text-muted">Yesterday, 11:00 AM</small>
+                            <p class="small mb-0">You have been assigned to the Marine HQ project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Events Section -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header bg-white">
+                        <h5 class="card-title mb-0">Upcoming Events</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary text-white p-2 rounded me-3">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Team Meeting</h6>
+                                <small class="text-muted">Tomorrow, 10:00 AM</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-success text-white p-2 rounded me-3">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Training Session</h6>
+                                <small class="text-muted">Wednesday, 2:00 PM</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-info text-white p-2 rounded me-3">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Team Celebration</h6>
+                                <small class="text-muted">Friday, 4:30 PM</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Section -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <h5 class="card-title mb-0">Current Projects</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Project Name</th>
+                                        <th>Deadline</th>
+                                        <th>Team</th>
+                                        <th>Status</th>
+                                        <th>Progress</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Grand Line Exploration</td>
+                                        <td>Dec 31, 2024</td>
+                                        <td>
+                                            <div class="avatar-group">
+                                                <img src="/api/placeholder/32/32" class="rounded-circle"
+                                                    alt="Team Member">
+                                                <img src="/api/placeholder/32/32" class="rounded-circle"
+                                                    alt="Team Member">
+                                                <img src="/api/placeholder/32/32" class="rounded-circle"
+                                                    alt="Team Member">
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-success">On Track</span></td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 75%">75%
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marine HQ Project</td>
+                                        <td>Jan 15, 2025</td>
+                                        <td>
+                                            <div class="avatar-group">
+                                                <img src="/api/placeholder/32/32" class="rounded-circle"
+                                                    alt="Team Member">
+                                                <img src="/api/placeholder/32/32" class="rounded-circle"
+                                                    alt="Team Member">
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-warning">At Risk</span></td>
+                                        <td>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-warning" role="progressbar"
+                                                    style="width: 45%">45%</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../public/javascripts/avatar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tooltipTriggerList = [].slice.call(
+                document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            );
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+    <script>
+        // Set current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+
+</html>
