@@ -65,15 +65,15 @@
     <aside>
         <div class=" d-flex justify-content-center">
             <img class="avatar shadow-medium "
-                src="https://imgs.search.brave.com/PUs-9qXlTnNWXF5aegQQvjlXb_7ilrK7GtUPFT8PoBc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzI3/YTVlYmViLWI5NDEt/NDBmZi04MWNhLTRi/YzgzOWQ3NWQyNy9k/ZzJwanUyLWM2YmQz/ZWNmLTExNmMtNDA0/Ny05NDNiLTg5Y2I2/ZTE4ZDk4NS5qcGc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekkzWVRWbFltVmlM/V0k1TkRFdE5EQm1a/aTA0TVdOaExUUmlZ/emd6T1dRM05XUXlO/MXd2WkdjeWNHcDFN/aTFqTm1Ka00yVmpa/aTB4TVRaakxUUXdO/RGN0T1RRellpMDRP/V05pTm1VeE9HUTVP/RFV1YW5CbkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuWXUzZy1yb2pV/MXBSWGRlVDJ3WHhr/R2dQem00OVVZcWM2/ejRTSEpfdGgxdw"
+                src="..\public\images\manager.png"
                 width="100" alt="">
         </div>
         <div class="dropdown">
             <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
                 data-bs-toggle="dropdown">
                 <div>
-                    <div class="fw-bold"></div>
-                    <div class="small text-muted"></div>
+                    <div class="fw-bold">John Doe</div>
+                    <div class="small text-muted">doe.john@astron.com</div>
                 </div>
                 <i class="fas fa-chevron-down"></i>
             </button>
@@ -105,17 +105,50 @@
             <span>Manage Leaves</span>
         </a>
     </aside>
-    <main class="p-4">
+    <main class="mt-lg-5 p-3 p-lg-5">
+        <!-- Mobile Responsive navbar -->
+        <header>
+            <nav class="navbar d-lg-none">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                        aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Astron</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav fw-medium fs-5">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Roles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Employees</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Main content -->
         <!-- Profile Header -->
         <div class="profile-header">
             <div class="row align-items-center">
                 <div class="col-auto">
-                    <img src="https://imgs.search.brave.com/PUs-9qXlTnNWXF5aegQQvjlXb_7ilrK7GtUPFT8PoBc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzI3/YTVlYmViLWI5NDEt/NDBmZi04MWNhLTRi/YzgzOWQ3NWQyNy9k/ZzJwanUyLWM2YmQz/ZWNmLTExNmMtNDA0/Ny05NDNiLTg5Y2I2/ZTE4ZDk4NS5qcGc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekkzWVRWbFltVmlM/V0k1TkRFdE5EQm1a/aTA0TVdOaExUUmlZ/emd6T1dRM05XUXlO/MXd2WkdjeWNHcDFN/aTFqTm1Ka00yVmpa/aTB4TVRaakxUUXdO/RGN0T1RRellpMDRP/V05pTm1VeE9HUTVP/RFV1YW5CbkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuWXUzZy1yb2pV/MXBSWGRlVDJ3WHhr/R2dQem00OVVZcWM2/ejRTSEpfdGgxdw"
+                    <img src="..\public\images\manager.png"
                         width="70" alt="Profile" class="rounded-circle ">
                 </div>
                 <div class="col">
                     <h2 class="mb-1">Roronona Zoro</h2>
-                    <p class="mb-0">Manager ID: MGR001 | Department: Swordsman Division</p>
+                    <p class="mb-0">Manager ID: MGR001 | Department: IT</p>
                 </div>
             </div>
         </div>
@@ -289,9 +322,9 @@
 
 
     <!-- Only for updating DOM elements with logged user data -->
-    <script src="../public/javascripts/state.js" type="module"></script>
+    <!-- <script src="../public/javascripts/state.js" type="module"></script> -->
     <!-- Code related to this page like dropdowns data etc -->
-    <script src="../public/javascripts/add-employee.js"></script>
+    <!-- <script src="../public/javascripts/add-employee.js"></script> -->
     <!-- Bootstrap minified JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <!-- Bootstrap Tooltip setup -->
