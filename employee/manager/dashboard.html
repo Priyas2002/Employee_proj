@@ -4,17 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Employee Management Dashboard" />
   <title>Dashboard</title>
   <!-- Checks if manager is authenticated -->
   <!-- <script src="../public/javascripts/check.js" type="module"></script> -->
   <!-- CSS Links -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-<!--   <link rel="stylesheet" href="../public/styles/custom-bootstrap.css"> -->
+  <!-- <link rel="stylesheet" href="../public/styles/custom-bootstrap.css"> -->
   <link rel="stylesheet" href="../public/styles/global.css" />
   <link rel="stylesheet" href="../public/styles/sidebar.css" />
   <link rel="stylesheet" href="../public/styles/avatar.css" />
-  <link rel="stylesheet" href="../public/styles/dashboard.css" />
+  <!-- <link rel="stylesheet" href="../public/styles/dashboard.css" />
+  <link rel="stylesheet" href="../public/styles/dashboard.css" /> -->
   <style>
     main {
       width: 100%;
@@ -25,20 +27,22 @@
 <body style="display: flex;">
   <!-- Sidebar -->
   <aside>
-    <div class=" d-flex justify-content-center">
-      <img class="avatar shadow-medium " src="..\public\images\manager.png" width="100" alt="">
+    <div class="d-flex justify-content-center">
+      <img class="avatar shadow-medium" src="..\public\images\manager.png" width="100" alt="User Avatar">
     </div>
     <div class="dropdown">
       <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
         data-bs-toggle="dropdown">
         <div>
-          <div class="fw-bold">John Doe</div>
-          <div class="small text-muted">doe.john@astron.com</div>
+          <div class="fw-bold">Sandeep Kumar</div>
+          <div class="small text-muted">sandeep01@astron.com</div>
         </div>
         <i class="fas fa-chevron-down"></i>
       </button>
-      <ul class="dropdown-menu w-100 ">
-        <li><a class="dropdown-item" href="./profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+      <ul class="dropdown-menu w-100">
+        <li>
+          <a class="dropdown-item" href="./profile"><i class="fas fa-user me-2"></i>Profile</a>
+        </li>
         <li><a class="dropdown-item" href="#"><i class="fas fa-gear me-2"></i>Settings</a></li>
         <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
         <li>
@@ -71,27 +75,49 @@
     <header>
       <nav class="navbar d-lg-none">
         <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-            aria-controls="offcanvasExample">
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
             <span class="navbar-toggler-icon"></span>
           </button>
+          <!-- Profile Dropdown -->
+          <div class="dropdown">
+            <button class="btn btn-light d-flex align-items-center" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <span>Sandeep Kumar</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end p-2">
+              <!-- Profile Header -->
+              <li class="profile-header">
+                <img
+                  src="..\public\images\manager.png"
+                  alt="Avatar" class="profile-avatar rounded-circle object-fit-cover" width="90">
+                <div class="mt-2">Sandeep Kumar</div>
+                <div class="profile-email">sandeep01@astron.com</div>
+              </li>
+              <!-- Dropdown Items -->
+              <li><a class="dropdown-item fs-5 fw-medium" href="./profile">View Profile</a></li>
+              <li><a class="dropdown-item text-danger fs-5 fw-medium" href="/logout">Logout</a></li>
+            </ul>
+          </div>
           <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
             aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Astron</h5>
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                Astron
+              </h5>
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                 aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav fw-medium fs-5">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                  <a class="nav-link active" aria-current="page" href="./dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Roles</a>
+                  <a class="nav-link" href="./employees">Employees</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Employees</a>
+                  <a class="nav-link" href="./leave-managment">Manage Leaves</a>
                 </li>
               </ul>
             </div>
@@ -100,28 +126,28 @@
       </nav>
     </header>
     <!-- Main content -->
-    <div class="mt-lg-5 p-3 p-lg-5">
-      <div class="mt-3">
+    <div class="p-3">
+      <div>
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h2 class="mb-0">Dashboard</h2>
         </div>
       </div>
       <div class="row">
         <div class="col-12 col-md-6 d-flex gap-3">
-          <div class="card flex-fill">
+          <div class="card stat-card flex-fill">
             <div class="card-body p-3">
               <h5 class="card-title">Active <span class="d-lg-inline d-none">Employees</span></h5>
               <p class="card-text display-4">50</p>
             </div>
           </div>
           <div class="card flex-fill">
-            <div class="card-body">
+            <div class="card-body p-3">
               <h5 class="card-title">Inactive <span class="d-lg-inline d-none">Employees</span></h5>
               <p class="card-text display-4">10</p>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 d-mt-0 mt-2">
+        <div class="col-12 col-md-6 mt-3 mt-lg-0 ps-lg-0">
           <div class="card">
             <div class="card-body p-3">
               <h5 class="card-title">Quick Actions</h5>
@@ -140,7 +166,7 @@
           </div>
         </div>
       </div>
-      <div class="row mt-4">
+      <div class="row mt-3">
         <div class="col-12">
           <div class="card">
             <div class="card-body p-3">
@@ -153,7 +179,7 @@
                       width="30" alt="John Doe" class="avatar-img rounded-circle">
                   </div>
                   <div class="flex-grow-1 d-flex justify-content-between align-items-center">
-                    <span class="">John Doe was added</span>
+                    <span class="">Priyas Santra was added</span>
                     <small class="text-muted">5 mins ago</small>
                   </div>
                 </li>
@@ -164,7 +190,7 @@
                       width="30" alt="Jane Smith" class="avatar-img rounded-circle">
                   </div>
                   <div class="flex-grow-1 d-flex justify-content-between align-items-center">
-                    <span class="">Jane Smith was updated</span>
+                    <span class="">Rishav Das was updated</span>
                     <small class="text-muted">15 mins ago</small>
                   </div>
                 </li>
@@ -175,7 +201,7 @@
                       width="30" alt="Mike Brown" class="avatar-img rounded-circle">
                   </div>
                   <div class="flex-grow-1 d-flex justify-content-between align-items-center">
-                    <span class="">Mike Brown was deactivated</span>
+                    <span class="">Prakash Biswas was deactivated</span>
                     <small class="text-muted">30 mins ago</small>
                   </div>
                 </li>
@@ -186,7 +212,7 @@
                       width="30" alt="Sarah Lee" class="avatar-img rounded-circle">
                   </div>
                   <div class="flex-grow-1 d-flex justify-content-between align-items-center">
-                    <span class="">Sarah Lee was added</span>
+                    <span class="">Ravi Ranjan was added</span>
                     <small class="text-muted">1 hour ago</small>
                   </div>
                 </li>
@@ -197,7 +223,7 @@
                       width="30" alt="David Kim" class="avatar-img rounded-circle">
                   </div>
                   <div class="flex-grow-1 d-flex justify-content-between align-items-center">
-                    <span class="">David Kim was updated</span>
+                    <span class="">Ayush Raj was updated</span>
                     <small class="text-muted">2 hours ago</small>
                   </div>
                 </li>
@@ -208,7 +234,7 @@
                       width="30" alt="Emily White" class="avatar-img rounded-circle">
                   </div>
                   <div class="flex-grow-1 d-flex justify-content-between align-items-center">
-                    <span class="">Emily White was promoted</span>
+                    <span class="">Sayantika Mukherjee was promoted</span>
                     <small class="text-muted">3 hours ago</small>
                   </div>
                 </li>
@@ -221,8 +247,6 @@
   </div>
   <!-- Only for updating DOM elements with logged user data -->
   <!-- <script src="../public/javascripts/state.js" type="module"></script> -->
-  <!-- To Handle Avatar Dropdown -->
-  <script src="../public/javascripts/avatar.js"></script>
   <!-- Bootstrap minified JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <!-- Bootstrap Tooltip setup -->
