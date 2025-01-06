@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manage Leaves</title>
     <!-- Checks if manager is authenticated -->
-    <!-- <script src="../public/javascripts/check.js" type="module"></script> -->
+    <!-- <script src="/public/javascripts/check.js" type="module"></script> -->
     <!-- CSS Links -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../public/styles/sidebar.css" />
-    <link rel="stylesheet" href="../public/styles/avatar.css" />
-    <link rel="stylesheet" href="../public/styles/custom-bootstrap.css" />
-    <link rel="stylesheet" href="../public/styles/employees.css" />
-    <link rel="stylesheet" href="../public/styles/global.css" />
+    <link rel="stylesheet" href="/public/styles/sidebar.css" />
+    <link rel="stylesheet" href="/public/styles/avatar.css" />
+    <link rel="stylesheet" href="/public/styles/custom-bootstrap.css" />
+    <link rel="stylesheet" href="/public/styles/employees.css" />
+    <link rel="stylesheet" href="/public/styles/global.css" />
     <style>
         a {
             text-decoration: none;
@@ -23,57 +23,53 @@
 
         main {
             width: 100%;
-            padding: 1em;
-        }
-
-        main>div:nth-child(2) {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
         }
     </style>
 </head>
 
-<body class="" style="display: flex;">
+<body class="" style="display: flex">
     <!-- Sidebar -->
     <aside>
-        <div class=" d-flex justify-content-center">
-            <img class="avatar shadow-medium " src="..\public\images\manager.png" width="100" alt="">
+        <div class="d-flex justify-content-center">
+            <img class="avatar shadow-medium" src="..\public\images\manager.png" width="100" alt="" />
         </div>
         <div class="dropdown">
             <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
                 data-bs-toggle="dropdown">
                 <div>
-                    <div class="fw-bold">John Doe</div>
-                    <div class="small text-muted">doe.john@astron.com</div>
+                    <div class="fw-bold">Sandeep Kumar</div>
+                    <div class="small text-muted">sandeep01@astron.com</div>
                 </div>
                 <i class="fas fa-chevron-down"></i>
             </button>
-            <ul class="dropdown-menu w-100 ">
-                <li><a class="dropdown-item" href="./profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fas fa-gear me-2"></i>Settings</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+            <ul class="dropdown-menu w-100">
                 <li>
-                    <hr class="dropdown-divider">
+                    <a class="dropdown-item" href="./profile"><i class="fas fa-user me-2"></i>Profile</a>
                 </li>
-                <li><a class="dropdown-item text-danger" href="/logout.html"><i
-                            class="fas fa-right-from-bracket me-2"></i>Log
-                        out</a></li>
+                <li>
+                    <a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="/settings"><i class="fas fa-gear me-2"></i>Settings</a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+                <li>
+                    <a class="dropdown-item text-danger" href="/logout"><i
+                            class="fas fa-right-from-bracket me-2"></i>Log out</a>
+                </li>
             </ul>
         </div>
-        <a class="" href="./dashboard.html">
+        <a class="" href="./dashboard">
             <i class="fa-solid fa-house"></i>
             <span href="">Dashboard</span>
         </a>
-        <a class="" hidden>
-            <i class="fa-solid fa-briefcase"></i>
-            <span href="">Roles</span>
-        </a>
-        <a class="" href="./employees.html">
+        <a class="" href="./employees">
             <i class="fa-solid fa-users"></i>
             <span href="">Employees</span>
         </a>
-        <a class="active" href="./leave-managment.html">
+        <a class="active" href="./leave-managment">
             <i class="fa-solid fa-gear"></i>
             <span href="">Manage Leaves</span>
         </a>
@@ -84,27 +80,48 @@
         <header>
             <nav class="navbar d-lg-none">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <!-- Profile Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-light d-flex align-items-center" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <span>Sandeep Kumar</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end p-2">
+                            <!-- Profile Header -->
+                            <li class="profile-header">
+                                <img src="https://imgs.search.brave.com/WloLO0sI2tMTY9YAZosYfuNuFVNTyZ5QA5zk0A8crHY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hdmF0/YXJmaWxlcy5hbHBo/YWNvZGVycy5jb20v/MzQ0LzM0NDcwNC5w/bmc"
+                                    alt="Avatar" class="profile-avatar rounded-circle object-fit-cover" width="90">
+                                <div class="mt-2">Sandeep Kumar</div>
+                                <div class="profile-email">sandeep01@astron.com</div>
+                            </li>
+                            <!-- Dropdown Items -->
+                            <li><a class="dropdown-item fs-5 fw-medium" href="./profile">View Profile</a></li>
+                            <li><a class="dropdown-item text-danger fs-5 fw-medium" href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
                         aria-labelledby="offcanvasExampleLabel">
                         <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Astron</h5>
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                                Astron
+                            </h5>
                             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                                 aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
                             <ul class="navbar-nav fw-medium fs-5">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                                    <a class="nav-link" aria-current="page" href="./dashboard">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Roles</a>
+                                    <a class="nav-link" href="./employees">Employees</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Employees</a>
+                                    <a class="nav-link active" href="./leave-managment">Manage Leaves</a>
                                 </li>
                             </ul>
                         </div>
@@ -113,39 +130,41 @@
             </nav>
         </header>
         <!-- Main content -->
-        <div class="row mt-lg-5 m-0">
+        <div class="p-3">
             <h2 class="mb-4">Leave Management</h2>
 
             <!-- Summary Cards -->
-            <div class="row mb-4 gap-3 w-100 gx-0">
-                <div class="col p-0 col-md-3">
-                    <div class="card">
+            <div class="row gx-0 row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 mb-4">
+                <div class="col">
+                    <div class="card h-100 stat-card">
                         <div class="card-body">
                             <h6 class="card-subtitle mb-2 text-muted">Pending Requests</h6>
                             <h2 class="card-title mb-0">12</h2>
                         </div>
                     </div>
                 </div>
-                <div class="col p-0 col-md-3 ">
-                    <div class="card">
+                <div class="col">
+                    <div class="card h-100 stat-card">
                         <div class="card-body">
                             <h6 class="card-subtitle mb-2 text-muted">Approved Today</h6>
                             <h2 class="card-title mb-0">5</h2>
                         </div>
                     </div>
                 </div>
-                <div class="col p-0 col-md-3">
-                    <div class="card">
+                <div class="col">
+                    <div class="card h-100 stat-card">
                         <div class="card-body">
                             <h6 class="card-subtitle mb-2 text-muted">On Leave Today</h6>
                             <h2 class="card-title mb-0">8</h2>
                         </div>
                     </div>
                 </div>
-                <div class="col col-md-3">
-                    <div class="card">
+                <div class="col">
+                    <div class="card h-100 stat-card">
                         <div class="card-body">
-                            <h6 class="card-subtitle mb-2 text-muted">Rejected This Month</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                Rejected This Month
+                            </h6>
                             <h2 class="card-title mb-0">3</h2>
                         </div>
                     </div>
@@ -153,15 +172,9 @@
             </div>
 
             <!-- Filters and Search -->
-            <div class="row mb-4">
+            <div class="row gx-0 mb-4">
                 <div class="col-md-8">
                     <div class="d-flex flex-wrap gap-3 mb-2">
-                        <select class="form-select w-auto">
-                            <option selected>All Departments</option>
-                            <option>IT</option>
-                            <option>HR</option>
-                            <option>Finance</option>
-                        </select>
                         <select class="form-select w-auto">
                             <option selected>All Status</option>
                             <option>Pending</option>
@@ -178,7 +191,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search employees...">
+                        <input type="text" class="form-control" placeholder="Search employees..." />
                         <button class="btn btn-outline-secondary" type="button">
                             <i class="fas fa-search"></i>
                         </button>
@@ -187,187 +200,90 @@
             </div>
 
             <!-- Leave Requests Table -->
-            <div class="card">
-                <div class="card-body p-lg-3 p-1">
-                    <div class="table-responsive">
-                        <table class="table align-middle">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>Employee</th>
-                                    <th>Leave Details</th>
-                                    <th class="d-none d-md-table-cell">Duration</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-2">
-                                            <img src="..\public\images\user.png"
-                                                width="40" class="rounded-circle" alt="Avatar">
-                                            <div>
-                                                <div class="fw-bold">Sarah Johnson</div>
-                                                <div class="small text-muted">IT Department</div>
-                                            </div>
+            <div class=" border-0" style="padding: 0;">
+                <div class="shadow-sm employees-section table-responsive" style="min-height: 350px;">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Employee</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">Leave Details</th>
+                                <th scope="col">Duration</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="..\employee\employee.jpg"
+                                            class="rounded-circle d-none d-lg-block me-3 employee-avatar object-fit-cover"
+                                            alt="Sarah Johnson" width="40" height="40">
+                                        <div>
+                                            <div class="fw-bold">Priyas Santra</div>
+                                            <div class="text-muted small">priyas23@astron.com</div>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex flex-column">
-                                            <span class="fw-medium">Annual Leave</span>
-                                            <span class="small text-muted">Dec 28 - Jan 02</span>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell">5 days</td>
-                                    <td><span class="badge bg-success">Approved</span></td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="btn" type="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <i class="fas fa-ellipsis-vertical"></i>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item text-success" href="#">
-                                                        <i class="fas fa-check me-2"></i> Approve
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item text-danger" href="#">
-                                                        <i class="fas fa-times me-2"></i> Reject
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-eye
-                                                                            me-2"></i> View Details
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-2">
-                                            <img src="..\public\images\user.png"
-                                                width="40" class="rounded-circle" alt="Avatar">
-                                            <div>
-                                                <div class="fw-bold">Sarah Johnson</div>
-                                                <div class="small text-muted">IT Department</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex flex-column">
-                                            <span class="fw-medium">Annual Leave</span>
-                                            <span class="small text-muted">Dec 28 - Jan 02</span>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell">5 days</td>
-                                    <td><span class="badge bg-warning">Pending</span></td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="btn" type="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <i class="fas fa-ellipsis-vertical"></i>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item text-success" href="#">
-                                                        <i class="fas fa-check me-2"></i> Approve
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item text-danger" href="#">
-                                                        <i class="fas fa-times me-2"></i> Reject
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-eye
-                                                                            me-2"></i> View Details
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-2">
-                                            <img src="..\public\images\user.png"
-                                                width="40" class="rounded-circle" alt="Avatar">
-                                            <div>
-                                                <div class="fw-bold">Sarah Johnson</div>
-                                                <div class="small text-muted">IT Department</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex flex-column">
-                                            <span class="fw-medium">Annual Leave</span>
-                                            <span class="small text-muted">Dec 28 - Jan 02</span>
-                                        </div>
-                                    </td>
-                                    <td class="d-none d-md-table-cell">5 days</td>
-                                    <td><span class="badge bg-danger">Rejected</span></td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="btn" type="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <i class="fas fa-ellipsis-vertical"></i>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item text-success" href="#">
-                                                        <i class="fas fa-check me-2"></i> Approve
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item text-danger" href="#">
-                                                        <i class="fas fa-times me-2"></i> Reject
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-eye
-                                                                            me-2"></i> View Details
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
+                                    </div>
+                                </td>
+                                <td>EMP001</td>
+                                <td>
+                                    <div class="d-flex flex-column">
+                                        <span>Annual Leave</span>
+                                        <small class="text-muted">Dec 28 - Jan 02</small>
+                                    </div>
+                                </td>
+                                <td>5 days</td>
+                                <td>
+                                    <span class="badge bg-warning">Pending</span>
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-light btn-sm dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown">
+                                            Actions
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">View Details</a></li>
+                                            <li><a class="dropdown-item" href="#">Approve</a></li>
+                                            <li><a class="dropdown-item text-danger" href="#">Reject</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                            </tbody>
-                        </table>
+                </div>
+            </div>
 
-                        <!-- Enhanced Pagination -->
-                        <div class="d-flex justify-content-between align-items-center mt-4">
-                            <div class="text-muted d-none d-lg-block">
-                                Showing <span class="fw-semibold">1-10</span> of
-                                <span class="fw-semibold">248</span> employees
-                            </div>
-                            <ul class="pagination mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item disabled"><span class="page-link">...</span></li>
-                                <li class="page-item"><a class="page-link" href="#">25</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+            <!-- Enhanced Pagination -->
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <div class="text-muted small">
+                    1-10 of 248 records
+                </div>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination pagination-sm mb-0">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </main>
     <!-- Only for updating DOM elements with logged user data -->
-    <!-- <script src="../public/javascripts/state.js" type="module"></script> -->
-    <!-- To Handle Avatar Dropdown -->
-    <!-- <script src="../public/javascripts/avatar.js"></script> -->
+    <!-- <script src="/public/javascripts/state.js" type="module"></script> -->
     <!-- Bootstrap minified JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <!-- Bootstrap Tooltip setup -->
