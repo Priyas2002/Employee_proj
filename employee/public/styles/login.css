@@ -1,9 +1,32 @@
+/* body {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
 body {
     background: linear-gradient(45deg, #6a11cb, #2575fc);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    /* Ensure relative positioning for the pseudo-element */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("background.jpg") no-repeat center center/cover;
+    opacity: 0.4;
+    /* Adjust the opacity to make the image dimmer */
+    z-index: -1;
 }
 
 .login-card {
@@ -14,6 +37,7 @@ body {
     backdrop-filter: blur(10px);
     max-width: 400px;
     width: 90%;
+    opacity: 0.9;
 }
 
 .form-floating {
