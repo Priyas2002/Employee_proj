@@ -1,7 +1,8 @@
 /* Anchor tags styling */
 a {
     text-decoration: none;
-    color: inherit; /* Use 'inherit' to match parent color for consistency */
+    color: inherit;
+    /* Use 'inherit' to match parent color for consistency */
 }
 
 /* Icon styling */
@@ -11,37 +12,61 @@ aside i {
 
 /* Unordered list styling */
 ul {
-    list-style: none; /* Remove bullets */
+    list-style: none;
+    /* Remove bullets */
     padding: 0;
     margin: 0;
 }
 
 /* Sidebar styling */
 aside {
-    display: flex; /* Simplify from inline-flex unless 'inline' is necessary */
+    display: flex;
+    /* Simplify from inline-flex unless 'inline' is necessary */
     flex-direction: column;
-    padding: 2em 1.5em; /* Simplify shorthand if both values are the same */
-    min-height: 100vh; /* Full viewport height */
-    gap: 20px; /* Consistent spacing between elements */
-    border-right: 1px solid rgba(0, 0, 0, 0.5); /* Light divider for separation */
+    padding: 2em 1.5em;
+    /* Simplify shorthand if both values are the same */
+    min-height: 100vh;
+    /* Full viewport height */
+    gap: 20px;
+    /* Consistent spacing between elements */
+    border-right: 1px solid var(--secondary);
+    /* Light divider for separation */
+    background-color: var(--surface);
+    color: var(--text);
 }
 
 /* Sidebar links styling */
 aside a {
-    display: flex; /* Flex for alignment */
-    align-items: center; /* Vertically center content */
-    justify-content: space-between; /* Distribute space between elements */
-    gap: 15px; /* Consistent spacing */
-    width: max-content; /* Replace fit-content for better support */
+    display: flex;
+    /* Flex for alignment */
+    align-items: center;
+    /* Vertically center content */
+    justify-content: space-between;
+    /* Distribute space between elements */
+    gap: 15px;
+    /* Consistent spacing */
+    width: max-content;
+    /* Replace fit-content for better support */
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Sidebar active styling */
 aside a.active {
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     color: #ffffff;
     padding: 0.5em 1em;
     border-radius: 5px;
-    text-transform: upp;
 }
 
+@media (max-width: 991.2px) {
+
+    body {
+        display: block;
+    }
+
+    aside:first-child {
+        display: none;
+    }
+}
