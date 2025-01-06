@@ -16,52 +16,13 @@
     <link rel="stylesheet" href="../public/styles/avatar.css" />
     <link rel="stylesheet" href="../public/styles/dashboard.css" />
     <style>
-        body {
-            display: flex;
-        }
-
         main {
             width: 100%;
-            padding: 1em;
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid white;
-        }
-
-        .stat-card {
-            transition: transform 0.2s;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .progress {
-            height: 10px;
-            border-radius: 5px;
-        }
-
-        .schedule-item {
-            border-left: 3px solid #4e73df;
-            padding-left: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .badge-custom {
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
         }
     </style>
 </head>
 
-<body class="bg-light d-flex">
+<body style="display: flex;">
     <aside>
         <div class=" d-flex justify-content-center">
             <img class="avatar shadow-medium "
@@ -72,8 +33,8 @@
             <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
                 data-bs-toggle="dropdown">
                 <div>
-                    <div class="fw-bold">John Doe</div>
-                    <div class="small text-muted">doe.john@astron.com</div>
+                    <div class="fw-bold">Sandeep Kumar</div>
+                    <div class="small text-muted">sandeep01@astron.com</div>
                 </div>
                 <i class="fas fa-chevron-down"></i>
             </button>
@@ -105,32 +66,53 @@
             <span>Manage Leaves</span>
         </a>
     </aside>
-    <main class="mt-lg-5 p-3 p-lg-5">
+    <main class="">
         <!-- Mobile Responsive navbar -->
         <header>
             <nav class="navbar d-lg-none">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <!-- Profile Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-light d-flex align-items-center" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <span>Sandeep Kumar</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end p-2">
+                            <!-- Profile Header -->
+                            <li class="profile-header">
+                                <img src="..\public\images\manager.png"
+                                    alt="Avatar" class="profile-avatar rounded-circle object-fit-cover" width="90">
+                                <div class="mt-2">Sandeep Kumar</div>
+                                <div class="profile-email">sandeep01@astron.com</div>
+                            </li>
+                            <!-- Dropdown Items -->
+                            <li><a class="dropdown-item fs-5 fw-bold" href="./profile">View Profile</a></li>
+                            <li><a class="dropdown-item text-danger fs-5 fw-medium" href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
                         aria-labelledby="offcanvasExampleLabel">
                         <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Astron</h5>
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                                Astron
+                            </h5>
                             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                                 aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
                             <ul class="navbar-nav fw-medium fs-5">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                                    <a class="nav-link" aria-current="page" href="./dashboard">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Roles</a>
+                                    <a class="nav-link" href="./employees">Employees</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Employees</a>
+                                    <a class="nav-link" href="./leave-managment">Manage Leaves</a>
                                 </li>
                             </ul>
                         </div>
@@ -140,179 +122,175 @@
         </header>
         <!-- Main content -->
         <!-- Profile Header -->
-        <div class="profile-header">
+        <div class="profile-header mx-3 mb-3">
             <div class="row align-items-center">
                 <div class="col-auto">
                     <img src="..\public\images\manager.png"
                         width="70" alt="Profile" class="rounded-circle ">
                 </div>
                 <div class="col">
-                    <h2 class="mb-1">Roronona Zoro</h2>
-                    <p class="mb-0">Manager ID: MGR001 | Department: IT</p>
+                    <h2 class="mb-1">Sandeep Kumar</h2>
+                    <p class="mb-0"><span class="text-nowrap">Manager ID: MGR001</span> | <span
+                            class="text-nowrap">Department: IT</span></p>
                 </div>
             </div>
         </div>
 
         <!-- Personal Information -->
-        <div class="row">
-            <div class="col-md-6 ">
-                <div class="card info-card mb-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h5 class="section-title">Basic Information</h5>
-                            <button class="btn btn-sm btn-outline-primary edit-button">
-                                <i class="fas fa-edit"></i> Edit
-                            </button>
+        <div class="row gx-0 row-cols-1 gap-3 mb-4 mx-3">
+            <div class="card info-card col">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="section-title">Basic Information</h5>
+                        <button class="btn btn-sm btn-outline-primary edit-button">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Full Name</strong>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Full Name</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Roronona Zoro
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Date of Birth</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                November 11, 1999
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Gender</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Male
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Blood Group</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                O+
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Marital Status</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Single
-                            </div>
+                        <div class="col-sm-8">
+                            Sandeep Kumar
                         </div>
                     </div>
-                </div>
-
-                <div class="card info-card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h5 class="section-title">Contact Information</h5>
-                            <button class="btn btn-sm btn-outline-primary edit-button">
-                                <i class="fas fa-edit"></i> Edit
-                            </button>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Date of Birth</strong>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Email</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                zoro@roronoa.com
-                            </div>
+                        <div class="col-sm-8">
+                            November 11, 1999
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Phone</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                +1 234 567 8900
-                            </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Gender</strong>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Emergency Contact</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Monkey D. Luffy<br>
-                                +1 234 567 8901
-                            </div>
+                        <div class="col-sm-8">
+                            Male
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Blood Group</strong>
+                        </div>
+                        <div class="col-sm-8">
+                            O+
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Marital Status</strong>
+                        </div>
+                        <div class="col-sm-8">
+                            Single
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="card info-card mb-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h5 class="section-title">Address Details</h5>
-                            <button class="btn btn-sm btn-outline-primary edit-button">
-                                <i class="fas fa-edit"></i> Edit
-                            </button>
+            <div class="card info-card col">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="section-title">Contact Information</h5>
+                        <button class="btn btn-sm btn-outline-primary edit-button">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Email</strong>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Current Address</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                123 Grand Line Street<br>
-                                East Blue City, GL 12345
-                            </div>
+                        <div class="col-sm-8">
+                            sandeep01@astron.com
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Permanent Address</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                456 Shimotsuki Village<br>
-                                East Blue Region, GL 67890
-                            </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Phone</strong>
+                        </div>
+                        <div class="col-sm-8">
+                            +1 234 567 8900
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Emergency Contact</strong>
+                        </div>
+                        <div class="col-sm-8">
+                            Ravi Sharma<br>
+                            +1 234 567 8901
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="card info-card col">
+                <div class="card-body ">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="section-title">Address Details</h5>
+                        <button class="btn btn-sm btn-outline-primary edit-button">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Current Address</strong>
+                        </div>
+                        <div class="col-sm-8">
+                            123 Grand Line Street<br>
+                            East Blue City, GL 12345
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Permanent Address</strong>
+                        </div>
+                        <div class="col-sm-8">
+                            456 Shimotsuki Village<br>
+                            East Blue Region, GL 67890
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <div class="card info-card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h5 class="section-title mb-4">Professional Details</h5>
-                            <button class="btn btn-sm btn-outline-primary edit-button">
-                                <i class="fas fa-edit"></i> Edit
-                            </button>
+            <div class="card info-card col">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="section-title mb-4">Professional Details</h5>
+                        <!-- <button class="btn btn-sm btn-outline-primary edit-button">
+                            <i class="fas fa-edit"></i> Edit
+                        </button> -->
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Department</strong>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Department</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Swordsman Division
-                            </div>
+                        <div class="col-sm-8">
+                            IT
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Designation</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Senior Manager
-                            </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Designation</strong>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Join Date</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                January 1, 2015
-                            </div>
+                        <div class="col-sm-8">
+                            Senior Manager
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Employee Type</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Full Time
-                            </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Join Date</strong>
+                        </div>
+                        <div class="col-sm-8">
+                            January 1, 2015
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <strong>Employee Type</strong>
+                        </div>
+                        <div class="col-sm-8">
+                            Full Time
                         </div>
                     </div>
                 </div>
@@ -324,7 +302,7 @@
     <!-- Only for updating DOM elements with logged user data -->
     <!-- <script src="../public/javascripts/state.js" type="module"></script> -->
     <!-- Code related to this page like dropdowns data etc -->
-    <!-- <script src="../public/javascripts/add-employee.js"></script> -->
+    <script src="../public/javascripts/add-employee.js"></script>
     <!-- Bootstrap minified JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <!-- Bootstrap Tooltip setup -->
